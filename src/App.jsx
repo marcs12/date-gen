@@ -88,8 +88,19 @@ export default function ValentinesApp() {
         backgroundPosition: "center",
       }}
     >
-      <div className="heading-bar">
-        <h1>Date Generator</h1>
+      <div
+        className="heading-bar"
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.h1
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          Date Generator
+        </motion.h1>
         <ul className="window-controls">
           <li className="min-box">
             <div className="minimize">
@@ -120,12 +131,12 @@ export default function ValentinesApp() {
             className="sparkle-top-left"
             initial={{ opacity: 1 }}
             animate={{
-              opacity: [1, 0, 1, 0, 1, 1], // Flickers twice, then stays on
+              opacity: [1, 0, 1, 0, 1, 1],
             }}
             transition={{
-              duration: 2, // 2 seconds total
-              times: [0, 0.2, 0.4, 0.6, 0.8, 1], // Controls flicker timing
-              repeat: Infinity, // Loops infinitely
+              duration: 2,
+              times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+              repeat: Infinity,
               ease: "linear",
             }}
           />
@@ -135,12 +146,12 @@ export default function ValentinesApp() {
             alt="sparkling png"
             initial={{ opacity: 1 }}
             animate={{
-              opacity: [1, 0, 1, 0, 1, 1], // Flickers twice, then stays on
+              opacity: [1, 0, 1, 0, 1, 1],
             }}
             transition={{
-              duration: 2, // 2 seconds total
-              times: [0, 0.2, 0.4, 0.6, 0.8, 1], // Controls flicker timing
-              repeat: Infinity, // Loops infinitely
+              duration: 2,
+              times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+              repeat: Infinity,
               ease: "linear",
               delay: 0.5,
             }}
@@ -154,13 +165,15 @@ export default function ValentinesApp() {
             className="input-field"
           />
           <br />
-          <button
+          <motion.button
             className="button"
             onClick={() => name && setStep(0)}
             disabled={!name}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Enter
-          </button>
+          </motion.button>
         </motion.div>
       ) : step !== "results" ? (
         <motion.div
@@ -168,7 +181,13 @@ export default function ValentinesApp() {
           animate={{ opacity: 1 }}
           className="card"
         >
-          <h2>{questions[step].question}</h2>
+          <motion.h2
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            {questions[step].question}
+          </motion.h2>
           <div className="options-grid">
             {questions[step].options.map((option) => (
               <label key={option} className="radio-label">
@@ -183,13 +202,15 @@ export default function ValentinesApp() {
               </label>
             ))}
           </div>
-          <button
+          <motion.button
             className="button"
             onClick={handleAnswer}
             disabled={!selectedOption}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Submit
-          </button>
+          </motion.button>
         </motion.div>
       ) : (
         <motion.div
@@ -204,18 +225,18 @@ export default function ValentinesApp() {
             initial={{
               opacity: 0,
               scale: 0.5,
-              clipPath: "inset(50% 50% 50% 50%)", // Start completely hidden
+              clipPath: "inset(50% 50% 50% 50%)",
             }}
             animate={{
               opacity: 1,
-              scale: [0.5, 1.05, 1], // Slight pop-in effect
-              clipPath: ["inset(50% 50% 50% 50%)", "inset(0% 0% 0% 0%)"], // Unveils the sketch effect
+              scale: [0.5, 1.05, 1],
+              clipPath: ["inset(50% 50% 50% 50%)", "inset(0% 0% 0% 0%)"],
             }}
             transition={{
               duration: 1.5,
               ease: "easeOut",
-              clipPath: { duration: 1, ease: "easeInOut" }, // Smooth reveal effect
-              scale: { duration: 0.6, ease: "easeOut" }, // Quick bounce effect
+              clipPath: { duration: 1, ease: "easeInOut" },
+              scale: { duration: 0.6, ease: "easeOut" },
             }}
           />
           <motion.img
@@ -225,18 +246,18 @@ export default function ValentinesApp() {
             initial={{
               opacity: 0,
               scale: 0.5,
-              clipPath: "inset(50% 50% 50% 50%)", // Start completely hidden
+              clipPath: "inset(50% 50% 50% 50%)",
             }}
             animate={{
               opacity: 1,
-              scale: [0.5, 1.05, 1], // Slight pop-in effect
-              clipPath: ["inset(50% 50% 50% 50%)", "inset(0% 0% 0% 0%)"], // Unveils the sketch effect
+              scale: [0.5, 1.05, 1],
+              clipPath: ["inset(50% 50% 50% 50%)", "inset(0% 0% 0% 0%)"],
             }}
             transition={{
               duration: 1.5,
               ease: "easeOut",
-              clipPath: { duration: 1, ease: "easeInOut" }, // Smooth reveal effect
-              scale: { duration: 0.6, ease: "easeOut" }, // Quick bounce effect
+              clipPath: { duration: 1, ease: "easeInOut" },
+              scale: { duration: 0.6, ease: "easeOut" },
             }}
           />
           <hr className="note-line" />
@@ -266,14 +287,20 @@ export default function ValentinesApp() {
           <hr className="note-line" />
           <br />
           <hr className="note-line" />
-
-          <button
+          <motion.button
             className="button retry-button"
             onClick={() => setStep("landing")}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Start Over
-          </button>
-          <div className="pink-bar"></div>
+          </motion.button>
+          <motion.div
+            className="pink-bar"
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 1 }}
+          />
         </motion.div>
       )}
     </div>

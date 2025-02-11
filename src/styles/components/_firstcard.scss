@@ -84,6 +84,13 @@
     z-index: 1;
   }
 
+  @media screen and (max-width: 425px) {
+    .bunny-left,
+    .flower-right {
+      display: none;
+    }
+  }
+
   .pink-bar {
     background-color: #e54378;
     width: 99%;
