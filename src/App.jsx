@@ -142,6 +142,7 @@ export default function ValentinesApp() {
               times: [0, 0.2, 0.4, 0.6, 0.8, 1], // Controls flicker timing
               repeat: Infinity, // Loops infinitely
               ease: "linear",
+              delay: 0.5,
             }}
           />
           <h2>What's your name?</h2>
@@ -196,6 +197,48 @@ export default function ValentinesApp() {
           animate={{ opacity: 1 }}
           className="card results-card"
         >
+          <motion.img
+            src={bunnies}
+            alt="bunnies png"
+            className="bunny-left"
+            initial={{
+              opacity: 0,
+              scale: 0.5,
+              clipPath: "inset(50% 50% 50% 50%)", // Start completely hidden
+            }}
+            animate={{
+              opacity: 1,
+              scale: [0.5, 1.05, 1], // Slight pop-in effect
+              clipPath: ["inset(50% 50% 50% 50%)", "inset(0% 0% 0% 0%)"], // Unveils the sketch effect
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeOut",
+              clipPath: { duration: 1, ease: "easeInOut" }, // Smooth reveal effect
+              scale: { duration: 0.6, ease: "easeOut" }, // Quick bounce effect
+            }}
+          />
+          <motion.img
+            src={flower}
+            alt="flower png"
+            className="flower-right"
+            initial={{
+              opacity: 0,
+              scale: 0.5,
+              clipPath: "inset(50% 50% 50% 50%)", // Start completely hidden
+            }}
+            animate={{
+              opacity: 1,
+              scale: [0.5, 1.05, 1], // Slight pop-in effect
+              clipPath: ["inset(50% 50% 50% 50%)", "inset(0% 0% 0% 0%)"], // Unveils the sketch effect
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeOut",
+              clipPath: { duration: 1, ease: "easeInOut" }, // Smooth reveal effect
+              scale: { duration: 0.6, ease: "easeOut" }, // Quick bounce effect
+            }}
+          />
           <hr className="note-line" />
           <br />
           <hr className="note-line" />
@@ -230,6 +273,7 @@ export default function ValentinesApp() {
           >
             Start Over
           </button>
+          <div className="pink-bar"></div>
         </motion.div>
       )}
     </div>
