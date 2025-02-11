@@ -164,6 +164,8 @@ export default function ValentinesApp() {
           className="card results-card"
         >
           <hr className="note-line" />
+          <br />
+          <hr className="note-line" />
           <p>{name},</p>
           <hr className="note-line" />
           <p>Based on your answers,</p>
