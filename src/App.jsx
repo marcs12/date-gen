@@ -86,16 +86,16 @@ export default function ValentinesApp() {
       }}
     >
       <div className="heading-bar">
-        <h1>Valentine's Date Generator</h1>
+        <h1>Date Generator</h1>
         <ul className="window-controls">
           <li className="min-box">
             <div className="minimize">
-              <img src={gifMinimize} alt="minimize" />
+              <span className="min-icon"></span>
             </div>
           </li>
           <li className="max-box">
             <div className="maximize">
-              <img src={gifMaximize} alt="maximize" />
+              <span className="max-icon"></span>
             </div>
           </li>
           <li className="close-box">
