@@ -4,10 +4,13 @@ import { motion } from "framer-motion";
 
 // Assets
 import gifBackground from "../src/assets/Background/twinkle2.gif";
-
-import gifMinimize from "../src/assets/Others/iconmonstr-minimize-thin.svg";
-import gifMaximize from "../src/assets/Others/iconmonstr-fullscreen-thin.svg";
 import gifClose from "../src/assets/Others/iconmonstr-x-mark-1.svg";
+
+// Stickers
+import bunnies from "../src/assets/Stickers/bunnies.png";
+import flower from "../src/assets/Stickers/flower.png";
+import heart from "../src/assets/Stickers/hearts.png";
+import sparkles from "../src/assets/Stickers/sparkles.png";
 
 export default function ValentinesApp() {
   const [step, setStep] = useState("landing");
@@ -19,49 +22,49 @@ export default function ValentinesApp() {
       question:
         "You've rejected affection for years, but now you're ready for a date! What's the vibe?",
       options: [
-        "🌿 A quiet picnic in the park",
-        "🎭 A night at a jazz club",
-        "🎡 A fun-filled carnival",
-        "🍜 A cozy ramen shop date",
+        "💻 A cozy video call with snacks and drinks",
+        "🎮 A fun co-op gaming session",
+        "🎨 A virtual museum or art tour",
+        "🍜 Ordering the same takeout and eating together over Discord",
       ],
     },
     {
       question:
         "You’re caught in a romance—what’s the perfect soundtrack for the date?",
       options: [
-        "🎶 Classic jazz and bossa nova",
-        "🎸 Indie love songs",
-        "🎻 A dramatic orchestral score",
-        "🎧 Chill lo-fi beats",
+        "🎶 A shared lo-fi playlist for chill vibes",
+        "🎸 A live-streamed indie concert",
+        "🎻 A dramatic film score in the background",
+        "🎤 A virtual karaoke showdown",
       ],
     },
     {
       question:
         "You blinked and suddenly, you had a valentine! What’s the ideal first activity?",
       options: [
-        "🖌️ Painting each other’s portraits",
-        "🌌 Stargazing and deep talks",
-        "🎮 A competitive arcade showdown",
-        "📖 Reading poetry at a café",
+        "🖌️ Drawing portraits of each other over a call",
+        "🌌 Watching a space livestream and talking about the universe",
+        "🎮 Competing in an online party game",
+        "📖 Reading poetry or a short story together",
       ],
     },
     {
       question:
         "You still feel a shock through every bone—what surprise will make the night unforgettable?",
       options: [
-        "💌 A handwritten letter",
-        "🍫 A custom-made dessert",
-        "🎤 A serenade under the stars",
-        "🎁 A mystery gift box",
+        "💌 Sending a heartfelt email or voice note",
+        "🍫 Ordering a surprise dessert to their doorstep",
+        "🎤 Sending them a personalized playlist",
+        "🎁 Playing a ‘mystery question’ game to learn more about each other",
       ],
     },
     {
       question: "What’s the perfect way to end the night?",
       options: [
-        "🌊 A quiet walk by the water",
-        "🌠 Making a wish on a shooting star",
-        "🍵 Sipping tea and reflecting on the night",
-        "🏡 A warm hug and a promise for another date",
+        "🌊 Sending a goodnight voice message",
+        "🌠 Watching a virtual planetarium show together",
+        "🍵 Talking about your favorite childhood memories before logging off",
+        "🏡 Making plans for the next online date",
       ],
     },
   ];
@@ -109,8 +112,38 @@ export default function ValentinesApp() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="card"
+          className="card landing-card"
         >
+          <motion.img
+            src={sparkles}
+            alt="sparkling png"
+            className="sparkle-top-left"
+            initial={{ opacity: 1 }}
+            animate={{
+              opacity: [1, 0, 1, 0, 1, 1], // Flickers twice, then stays on
+            }}
+            transition={{
+              duration: 2, // 2 seconds total
+              times: [0, 0.2, 0.4, 0.6, 0.8, 1], // Controls flicker timing
+              repeat: Infinity, // Loops infinitely
+              ease: "linear",
+            }}
+          />
+          <motion.img
+            src={sparkles}
+            className="sparkle-bottom-right"
+            alt="sparkling png"
+            initial={{ opacity: 1 }}
+            animate={{
+              opacity: [1, 0, 1, 0, 1, 1], // Flickers twice, then stays on
+            }}
+            transition={{
+              duration: 2, // 2 seconds total
+              times: [0, 0.2, 0.4, 0.6, 0.8, 1], // Controls flicker timing
+              repeat: Infinity, // Loops infinitely
+              ease: "linear",
+            }}
+          />
           <h2>What's your name?</h2>
           <input
             type="text"
@@ -184,9 +217,7 @@ export default function ValentinesApp() {
           <hr className="note-line" />
           <br />
           <hr className="note-line" />
-          <p className="final-message">
-            So... wanna go on this date with me? 😊
-          </p>
+          <p className="final-message">Now go and make it happen! 🌟</p>
           <hr className="note-line" />
           <br />
           <hr className="note-line" />
