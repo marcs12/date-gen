@@ -1,0 +1,10 @@
+@use "./base/global.scss";
+
+// Typography
+@use "./base/_typography.scss";
+
+// Components
+@use "./components/firstcard.scss";
+
+// Reset
+@use "./base/_reset.scss";
