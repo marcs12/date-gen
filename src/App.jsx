@@ -161,19 +161,22 @@ export default function ValentinesApp() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="card"
+          className="card results-card"
         >
-          <h2>{name}, Your Personalized Date Plan</h2>
-          <p>Hey {name},</p>
-          <p>Based on your answers, here’s the perfect date idea:</p>
+          <p>{name},</p>
+          <p>Based on your answers,</p>
+          <p>here’s the perfect date:</p>
+          <br />
           {Object.entries(answers).map(([question, answer], index) => (
             <p key={index} className="answer-text">
               {answer}
             </p>
           ))}
+          <br />
           <p className="final-message">
             So... wanna go on this date with me? 😊
           </p>
+          <br />
           <button
             className="button retry-button"
             onClick={() => setStep("landing")}
