@@ -163,20 +163,34 @@ export default function ValentinesApp() {
           animate={{ opacity: 1 }}
           className="card results-card"
         >
+          <hr className="note-line" />
           <p>{name},</p>
+          <hr className="note-line" />
           <p>Based on your answers,</p>
+          <hr className="note-line" />
           <p>here’s the perfect date:</p>
+          <hr className="note-line" />
           <br />
+          <hr className="note-line" />
           {Object.entries(answers).map(([question, answer], index) => (
-            <p key={index} className="answer-text">
-              {answer}
-            </p>
+            <span key={index} className="answer-text">
+              <p>{answer}</p>
+              <hr className="note-line" />
+            </span>
           ))}
           <br />
+          <hr className="note-line" />
+          <br />
+          <hr className="note-line" />
           <p className="final-message">
             So... wanna go on this date with me? 😊
           </p>
+          <hr className="note-line" />
           <br />
+          <hr className="note-line" />
+          <br />
+          <hr className="note-line" />
+
           <button
             className="button retry-button"
             onClick={() => setStep("landing")}

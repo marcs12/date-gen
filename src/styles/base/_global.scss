@@ -45,11 +45,5 @@ body {
   font-style: italic;
   font-size: 14px;
   color: $text-color;
-}
-
-.final-message {
-  margin-top: 15px;
-  font-size: 18px;
-  font-weight: bold;
-  color: $highlight-color;
+  width: 100%;
 }
