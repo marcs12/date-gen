@@ -61,6 +61,7 @@
     width: 100%;
     height: 0.75rem;
   }
+
   p {
     font-size: 1rem;
     font-weight: bold;
@@ -91,12 +92,9 @@
     }
   }
 
-  .pink-bar {
+  #pink-bar {
     background-color: #e54378;
-    width: 99%;
     height: 0.5rem;
-    margin: 2px;
-    padding: 2px;
     position: absolute;
     bottom: 10px;
     z-index: 0;
@@ -118,5 +116,116 @@
     bottom: -60%;
     right: -20%;
     z-index: 0;
+  }
+}
+
+.music-player {
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+
+  .player-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .song-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 10px;
+
+    button {
+      background-color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: #ffafbd;
+        color: #fff;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  .volume-slider {
+    width: 80%;
+    margin-top: 0.5rem;
+    appearance: none;
+    height: 6px;
+    border-radius: 10px;
+    background: #fff;
+    outline: none;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      background: #ff6f91;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
+    }
+  }
+
+  // Floating sparkles animation
+  &::before,
+  &::after {
+    content: "✨";
+    position: absolute;
+    font-size: 1.5rem;
+    animation: floatingSparkles 3s infinite ease-in-out alternate;
+  }
+
+  &::before {
+    top: -10px;
+    left: 10px;
+  }
+
+  &::after {
+    bottom: -10px;
+    right: 10px;
+  }
+}
+
+@keyframes floatingSparkles {
+  0% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(5px) rotate(-5deg);
   }
 }

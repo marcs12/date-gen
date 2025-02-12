@@ -2,6 +2,9 @@ import "./styles/styles.scss";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+// Component
+import Player from "./components/Player";
+
 // Assets
 import gifBackground from "../src/assets/Background/twinkle2.gif";
 import gifClose from "../src/assets/Others/iconmonstr-x-mark-1.svg";
@@ -296,13 +299,14 @@ export default function ValentinesApp() {
             Start Over
           </motion.button>
           <motion.div
-            className="pink-bar"
+            id="pink-bar"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 1 }}
           />
         </motion.div>
       )}
+      <Player />
     </div>
   );
 }
