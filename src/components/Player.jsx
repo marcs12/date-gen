@@ -52,6 +52,17 @@ export default function MusicPlayer() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <div className="scrolling-title">
+        <p>
+          Laufey - Valentine ... this was taken from YT, please don't sue me. I
+          love laufey so I made this somewhat Laufey themed. I hope you like it.
+          Anyways, how are you? I hope you're doing well friend. I hope that you
+          and your significant other have a great valentines day. You know what?
+          Since you guys are doing so well, why not check their phone? I'm sure
+          they have nothing to hide right? Right? oh well... Jsut saying.. I
+          hope you have a great day. Maybe.
+        </p>
+      </div>
       <button className="play-btn" onClick={togglePlay}>
         <img
           src={isPlaying ? pauseBtn : playBtn}
