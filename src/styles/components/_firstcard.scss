@@ -113,119 +113,66 @@
   .sparkle-bottom-right {
     width: 10rem;
     position: absolute;
-    bottom: -60%;
+    bottom: -40%;
     right: -20%;
     z-index: 0;
   }
 }
 
 .music-player {
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  padding: 1rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  width: 250px;
-  font-family: "Comic Sans MS", "Poppins", sans-serif;
-  position: relative;
-  overflow: hidden;
+  padding: 1rem;
+  background-color: $card-bg;
+  border: 0.5rem solid $text-color;
+  box-shadow: #e54378 0.5rem 0.5rem;
+  width: 100%;
+  max-width: 20rem;
+  margin: 2rem auto;
 
-  .player-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .play-btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  input[type="range"] {
     width: 100%;
 
-    .song-title {
-      font-size: 1rem;
-      font-weight: bold;
-      color: #fff;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  .controls {
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    gap: 10px;
-
-    button {
-      background-color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
-
-      &:hover {
-        transform: scale(1.1);
-        background-color: #ffafbd;
-        color: #fff;
-      }
-
-      &:active {
-        transform: scale(0.9);
-      }
-    }
-  }
-
-  .volume-slider {
-    width: 80%;
-    margin-top: 0.5rem;
+    -webkit-appearance: none;
     appearance: none;
-    height: 6px;
-    border-radius: 10px;
-    background: #fff;
+    height: 0.5rem;
+    background: $text-color;
     outline: none;
-    transition: 0.2s;
-    cursor: pointer;
-
-    &::-webkit-slider-thumb {
-      appearance: none;
-      width: 15px;
-      height: 15px;
-      background: #ff6f91;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      transition: 0.2s;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 1;
     }
-  }
-
-  // Floating sparkles animation
-  &::before,
-  &::after {
-    content: "✨";
-    position: absolute;
-    font-size: 1.5rem;
-    animation: floatingSparkles 3s infinite ease-in-out alternate;
-  }
-
-  &::before {
-    top: -10px;
-    left: 10px;
-  }
-
-  &::after {
-    bottom: -10px;
-    right: 10px;
-  }
-}
-
-@keyframes floatingSparkles {
-  0% {
-    transform: translateY(-5px) rotate(5deg);
-  }
-  100% {
-    transform: translateY(5px) rotate(-5deg);
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 1rem;
+      height: 1rem;
+      background: $card-bg;
+      cursor: pointer;
+      border: 2px solid $text-color;
+    }
+    &::-moz-range-thumb {
+      width: 1rem;
+      height: 1rem;
+      background: $card-bg;
+      cursor: pointer;
+      border: 2px solid $text-color;
+    }
   }
 }

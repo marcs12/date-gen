@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import musicFile from "../assets/Others/Laufey - Valentine (Official Audio).mp3";
+import playBtn from "../assets/Others/play.svg";
+import pauseBtn from "../assets/Others/pause.svg";
 
 export default function MusicPlayer() {
   const audioRef = useRef(new Audio(musicFile));
@@ -51,7 +53,10 @@ export default function MusicPlayer() {
       transition={{ duration: 0.5 }}
     >
       <button className="play-btn" onClick={togglePlay}>
-        {isPlaying ? "Pause" : "Play"}
+        <img
+          src={isPlaying ? pauseBtn : playBtn}
+          alt={isPlaying ? "Pause" : "Play"}
+        />
       </button>
       <input
         type="range"
