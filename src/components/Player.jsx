@@ -59,7 +59,7 @@ export default function MusicPlayer() {
           Anyways, how are you? I hope you're doing well friend. I hope that you
           and your significant other have a great valentines day. You know what?
           Since you guys are doing so well, why not check their phone? I'm sure
-          they have nothing to hide right? Right? oh well... Jsut saying.. I
+          they have nothing to hide right? Right? oh well... Just saying.. I
           hope you have a great day. Maybe.
         </p>
       </div>
