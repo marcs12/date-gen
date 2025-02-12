@@ -1,33 +1,19 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-const ParticlesBackground = () => {
-  const particlesInit = async (main) => {
+const ParticlesBackground = React.memo(() => {
+  const particlesInit = useCallback(async (main) => {
+    console.log("Initializing particles...");
     await loadFull(main);
-  };
-
-  const particlesLoaded = (container) => {
-    console.log("Particles container loaded", container);
-  };
+  }, []);
 
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         autoPlay: true,
-        background: {
-          color: {
-            value: "#fff",
-          },
-          image: "",
-          position: "",
-          repeat: "",
-          size: "",
-          opacity: 1,
-        },
         backgroundMask: {
           composite: "destination-out",
           cover: {
@@ -43,7 +29,7 @@ const ParticlesBackground = () => {
         delay: 0,
         fullScreen: {
           enable: true,
-          zIndex: -9999, // Set zIndex to -1 to ensure it's at the very back
+          zIndex: 0,
         },
         detectRetina: true,
         duration: 0,
@@ -692,6 +678,6 @@ const ParticlesBackground = () => {
       }}
     />
   );
-};
+});
 
 export default ParticlesBackground;

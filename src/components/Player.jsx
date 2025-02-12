@@ -17,11 +17,12 @@ export default function MusicPlayer() {
 
   useEffect(() => {
     audioRef.current.volume = volume;
+    audioRef.current.loop = true; // Set the audio to loop
     // Auto-play the audio when the page loads and when the state is true
     if (isPlaying) {
       audioRef.current.play().catch(() => {});
     }
-  }, []); // This ensures the effect runs only once when the page loads
+  }, [isPlaying, volume]); // This ensures the effect runs only once when the page loads
 
   useEffect(() => {
     audioRef.current.volume = volume;
@@ -54,13 +55,13 @@ export default function MusicPlayer() {
     >
       <div className="scrolling-title">
         <p>
-          Laufey - Valentine ... this was taken from YT, please don't sue me. I
-          love laufey so I made this somewhat Laufey themed. I hope you like it.
-          Anyways, how are you? I hope you're doing well friend. I hope that you
-          and your significant other have a great valentines day. You know what?
-          Since you guys are doing so well, why not check their phone? I'm sure
-          they have nothing to hide right? Right? oh well... Just saying.. I
-          hope you have a great day. Maybe.
+          Laufey - Valentine ... this was taken from YT, please don&apos;t sue
+          me. I love laufey so I made this somewhat Laufey themed. I hope you
+          like it. Anyways, how are you? I hope you&apos;re doing well friend. I
+          hope that you and your significant other have a great valentines day.
+          You know what? Since you guys are doing so well, why not check their
+          phone? I&apos;m sure they have nothing to hide right? Right? oh
+          well... Just saying.. I hope you have a great day. Maybe.
         </p>
       </div>
       <button className="play-btn" onClick={togglePlay}>
