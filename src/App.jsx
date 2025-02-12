@@ -2,6 +2,8 @@ import "./styles/styles.scss";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+import ParticlesBackground from "./Particle";
+
 // Component
 import Player from "./components/Player";
 
@@ -83,14 +85,8 @@ export default function ValentinesApp() {
   };
 
   return (
-    <div
-      className="app-container"
-      style={{
-        backgroundImage: `url(${gifBackground})`,
-        backgroundSize: "25rem",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="app-container">
+      <ParticlesBackground />
       <div
         className="heading-bar"
         initial={{ y: -60, opacity: 0 }}
