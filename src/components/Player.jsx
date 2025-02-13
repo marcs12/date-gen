@@ -67,13 +67,18 @@ export default function MusicPlayer() {
     >
       <div className="scrolling-title">
         <p>
-          Laufey - Valentine ... this was taken from YT, please don&apos;t sue
-          me. I love laufey so I made this somewhat Laufey themed. I hope you
-          like it. Anyways, how are you? I hope you&apos;re doing well friend. I
-          hope that you and your significant other have a great valentines day.
-          You know what? Since you guys are doing so well, why not check their
-          phone? I&apos;m sure they have nothing to hide right? Right? oh
-          well... Just saying.. I hope you have a great day. Maybe.
+          Happy Valentine’s Day! ❤️ To those celebrating with a special someone,
+          may your day be filled with love, laughter, and cherished moments.
+          Love is a beautiful thing, and today is a reminder to appreciate the
+          connections that bring warmth to our hearts. For those spending the
+          day alone, remember that love isn’t just about romance—it’s in the
+          friendships you cherish, the family who supports you, and most
+          importantly, the kindness you show yourself. You are worthy of love,
+          joy, and all the good things life has to offer. Take today as a
+          reminder that your story is still unfolding, and love—whether from
+          within or from others—will find you in its own time. No matter how you
+          spend today, know that you are valued, appreciated, and never truly
+          alone. 💖
         </p>
       </div>
       <button className="play-btn" onClick={togglePlay}>
