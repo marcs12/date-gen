@@ -2,6 +2,23 @@ import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
+import image24 from "./assets/bg-floaters/image-24.png";
+import image25 from "../src/assets/bg-floaters/image-25.png";
+import image26 from "../src/assets/bg-floaters/image-26.png";
+import image27 from "../src/assets/bg-floaters/image-27.png";
+import image28 from "../src/assets/bg-floaters/image-28.png";
+import image33 from "../src/assets/bg-floaters/image-33.png";
+import image35 from "../src/assets/bg-floaters/image-35.png";
+import image41 from "../src/assets/bg-floaters/image-41.png";
+import image42 from "../src/assets/bg-floaters/image-42.png";
+import image43 from "../src/assets/bg-floaters/image-43.png";
+import image44 from "../src/assets/bg-floaters/image-44.png";
+import image45 from "../src/assets/bg-floaters/image-45.png";
+import image46 from "../src/assets/bg-floaters/image-46.png";
+import image47 from "../src/assets/bg-floaters/image-47.png";
+import image48 from "../src/assets/bg-floaters/image-48.png";
+import image49 from "../src/assets/bg-floaters/image-49.png";
+
 const ParticlesBackground = React.memo(() => {
   const particlesInit = useCallback(async (main) => {
     console.log("Initializing particles...");
@@ -556,112 +573,112 @@ const ParticlesBackground = React.memo(() => {
         name: "Images",
         preload: [
           {
-            src: "https://particles.js.org/images/fruits/apple.png",
+            src: image24,
             gif: false,
             height: 32,
             name: "apple",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/avocado.png",
+            src: image25,
             gif: false,
             height: 32,
             name: "avocado",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/banana.png",
+            src: image26,
             gif: false,
             height: 32,
             name: "banana",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/berries.png",
+            src: image27,
             gif: false,
             height: 32,
             name: "berries",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/cherry.png",
+            src: image28,
             gif: false,
             height: 32,
             name: "cherry",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/grapes.png",
+            src: image33,
             gif: false,
             height: 32,
             name: "grapes",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/lemon.png",
+            src: image35,
             gif: false,
             height: 32,
             name: "lemon",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/orange.png",
+            src: image41,
             gif: false,
             height: 32,
             name: "orange",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/peach.png",
+            src: image42,
             gif: false,
             height: 32,
             name: "peach",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/pear.png",
+            src: image43,
             gif: false,
             height: 32,
             name: "pear",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/pepper.png",
+            src: image44,
             gif: false,
             height: 32,
             name: "pepper",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/plum.png",
+            src: image45,
             gif: false,
             height: 32,
             name: "plum",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/star.png",
+            src: image46,
             gif: false,
             height: 32,
             name: "star",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/strawberry.png",
+            src: image47,
             gif: false,
             height: 32,
             name: "strawberry",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/watermelon.png",
+            src: image48,
             gif: false,
             height: 32,
             name: "watermelon",
             width: 32,
           },
           {
-            src: "https://particles.js.org/images/fruits/watermelon_slice.png",
+            src: image49,
             gif: false,
             height: 32,
             name: "watermelon_slice",
