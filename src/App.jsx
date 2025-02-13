@@ -137,6 +137,12 @@ export default function ValentinesApp() {
             src={sparkles}
             alt="sparkling png"
             className="sparkle-top-left"
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              repeatDelay: Math.random() * 2,
+            }}
           />
           <h2>What's your name?</h2>
           <input
@@ -180,34 +186,109 @@ export default function ValentinesApp() {
           </motion.button>
         </motion.div>
       ) : (
-        <motion.div className="card results-card">
-          <motion.img src={bunnies} alt="bunnies png" className="bunny-left" />
-          <motion.img src={flower} alt="flower png" className="flower-right" />
+        <motion.div
+          className="card results-card"
+          initial={{ rotateY: 90, opacity: 0 }}
+          animate={{ rotateY: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Stickers appear after card */}
+          <motion.img
+            src={bunnies}
+            alt="bunnies png"
+            className="bunny-left"
+            initial={{ scale: 0.5, opacity: 0, rotate: -15 }}
+            animate={{ scale: 1, opacity: 1, rotate: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
+          />
+          <motion.img
+            src={flower}
+            alt="flower png"
+            className="flower-right"
+            initial={{ scale: 0.5, opacity: 0, rotate: 15 }}
+            animate={{ scale: 1, opacity: 1, rotate: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 1.1 }}
+          />
+
           <br />
           <hr className="note-line" />
           <br />
           <hr className="note-line" />
           <br />
           <hr className="note-line" />
-          <p>{name},</p>
+
+          {/* Name fades in */}
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.4 }}
+          >
+            {name},
+          </motion.p>
+
           <hr className="note-line" />
-          <p>Based on your answers, here’s the perfect date:</p>
+
+          {/* Date description fades in */}
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.8 }}
+          >
+            Based on your answers, here’s the perfect date:
+          </motion.p>
+
           <hr className="note-line" />
+          <br />
+          <hr className="note-line" />
+
+          {/* Answers fade in one by one */}
           {Object.entries(answers).map(([question, answer], index) => (
-            <span key={index} className="answer-text">
-              <p>{answer}</p>
+            <motion.span key={index} className="answer-text">
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 2.2 + index * 0.4 }}
+              >
+                {answer}
+              </motion.p>
               <hr className="note-line" />
-            </span>
+            </motion.span>
           ))}
-          <p className="final-message">Now go and make it happen! 🌟</p>{" "}
+
+          <br />
+          <hr className="note-line" />
+
+          {/* Final message fades in last before button */}
+          <motion.p
+            className="final-message"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 2.2 + Object.keys(answers).length * 0.4,
+            }}
+          >
+            Now go and make it happen! 🌟
+          </motion.p>
+
           <hr className="note-line" />
           <br />
           <hr className="note-line" />
           <br />
           <hr className="note-line" />
+
+          {/* Button appears last */}
           <motion.button
             className="button retry-button"
             onClick={() => setStep("landing")}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{
+              duration: 0.4,
+              delay: 2.6 + Object.keys(answers).length * 0.4,
+            }}
           >
             Start Over
           </motion.button>
