@@ -55,7 +55,7 @@ export default function ValentinesApp() {
     },
     {
       question:
-        "You blinked and suddenly, you had a valentine! What’s the ideal first activity?",
+        "You blinked and suddenly, you had a valentine! What’s your ideal activity?",
       options: [
         "🎨 Creative and artsy",
         "🌌 Something deep",
