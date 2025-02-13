@@ -16,25 +16,37 @@ export default function MusicPlayer() {
   });
 
   useEffect(() => {
-    audioRef.current.volume = volume;
-    audioRef.current.loop = true; // Set the audio to loop
-    // Auto-play the audio when the page loads and when the state is true
+    const audio = audioRef.current;
+    audio.volume = volume;
+    audio.loop = true;
+
+    // Reset the song on page load
+    audio.currentTime = 0;
+
     if (isPlaying) {
-      audioRef.current.play().catch(() => {});
+      audio.play().catch(() => {});
     }
-  }, [isPlaying, volume]); // This ensures the effect runs only once when the page loads
+
+    return () => {
+      audio.pause();
+    };
+  }, []); // Run only once on mount
 
   useEffect(() => {
-    audioRef.current.volume = volume;
+    const audio = audioRef.current;
+    audio.volume = volume;
     localStorage.setItem("volume", volume);
   }, [volume]);
 
   useEffect(() => {
+    const audio = audioRef.current;
+
     if (isPlaying) {
-      audioRef.current.play().catch(() => {});
+      audio.play().catch(() => {});
     } else {
-      audioRef.current.pause();
+      audio.pause();
     }
+
     localStorage.setItem("isPlaying", isPlaying);
   }, [isPlaying]);
 
