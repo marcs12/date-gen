@@ -55,3 +55,42 @@ body {
   height: 100%;
   z-index: -1;
 }
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  background-color: #fff9e8; /* Soft paper-like background */
+}
+
+.bunny-icon {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.flower-icon {
+  position: absolute;
+  width: 40px;
+  height: auto;
+}
+
+.flower-icon.left {
+  top: 20%;
+  left: 10%;
+}
+
+.flower-icon.right {
+  top: 20%;
+  right: 10%;
+}
+
+.loading-text {
+  font-family: "Comic Sans MS", cursive;
+  font-size: 1.5rem;
+  color: #ff5f8f;
+  text-shadow: 1px 1px 0px #000;
+}
