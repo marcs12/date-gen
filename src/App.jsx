@@ -300,6 +300,38 @@ export default function ValentinesApp() {
         </motion.div>
       )}
       <Player />
+      <div className="links-container">
+        <p>Made with ❤️ by Marc</p>
+        <motion.a
+          href="http://marcsapa.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="animated-link portfolio"
+          whileHover={{ scale: 1.1, rotate: 2 }}
+          whileTap={{ scale: 0.9 }}
+          animate={{
+            y: [0, -5, 0],
+            transition: { repeat: Infinity, duration: 1.5, ease: "easeInOut" },
+          }}
+        >
+          Check out my Portfolio 👾
+        </motion.a>
+
+        <motion.a
+          href="https://github.com/marcs12/date-gen"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="animated-link github"
+          whileHover={{ scale: 1.1, rotate: -2 }}
+          whileTap={{ scale: 0.9 }}
+          animate={{
+            y: [0, -5, 0],
+            transition: { repeat: Infinity, duration: 1.5, ease: "easeInOut" },
+          }}
+        >
+          Want to see how I built this? 🖥️
+        </motion.a>
+      </div>
     </div>
   );
 }
