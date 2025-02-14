@@ -7,10 +7,7 @@ import pauseBtn from "../assets/Others/pause.svg";
 export default function MusicPlayer() {
   const audioRef = useRef(new Audio(musicFile));
 
-  const [isPlaying, setIsPlaying] = useState(() => {
-    const storedPlay = localStorage.getItem("isPlaying");
-    return storedPlay === null ? true : JSON.parse(storedPlay);
-  });
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const [volume, setVolume] = useState(() => {
     const storedVolume = localStorage.getItem("volume");
@@ -23,19 +20,6 @@ export default function MusicPlayer() {
     audio.loop = true;
     audio.currentTime = 0; // Start from beginning
     audio.muted = false; // Ensure unmuted
-
-    // Autoplay handling with a delay
-    const playAudio = async () => {
-      try {
-        await audio.play();
-      } catch (error) {
-        console.warn("Autoplay was blocked:", error);
-      }
-    };
-
-    if (isPlaying) {
-      setTimeout(playAudio, 300);
-    }
 
     return () => {
       audio.pause();
