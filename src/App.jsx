@@ -103,14 +103,19 @@ export default function ValentinesApp() {
   ];
 
   const handleAnswer = () => {
-    const outcomeIndex = Math.floor(
-      Math.random() * questions[step].outcomes.length
-    );
+    if (selectedOption === "") return; // Prevent proceeding if no option is selected
+
+    const currentQuestion = questions[step];
+    const selectedIndex = currentQuestion.options.indexOf(selectedOption); // Find the index of the selected option
+    const outcome = currentQuestion.outcomes[selectedIndex]; // Match outcome based on index
+
     setAnswers({
       ...answers,
-      [questions[step].question]: questions[step].outcomes[outcomeIndex],
+      [currentQuestion.question]: outcome, // Assign the correct outcome
     });
-    setSelectedOption("");
+
+    setSelectedOption(""); // Reset selection for the next question
+
     if (step < questions.length - 1) {
       setStep(step + 1);
     } else {
