@@ -6,10 +6,12 @@ import pauseBtn from "../assets/Others/pause.svg";
 
 export default function MusicPlayer() {
   const audioRef = useRef(new Audio(musicFile));
+
   const [isPlaying, setIsPlaying] = useState(() => {
     const storedPlay = localStorage.getItem("isPlaying");
     return storedPlay === null ? true : JSON.parse(storedPlay);
   });
+
   const [volume, setVolume] = useState(() => {
     const storedVolume = localStorage.getItem("volume");
     return storedVolume === null ? 0.2 : parseFloat(storedVolume);
@@ -19,18 +21,26 @@ export default function MusicPlayer() {
     const audio = audioRef.current;
     audio.volume = volume;
     audio.loop = true;
+    audio.currentTime = 0; // Start from beginning
+    audio.muted = false; // Ensure unmuted
 
-    // Reset the song on page load
-    audio.currentTime = 0;
+    // Autoplay handling with a delay
+    const playAudio = async () => {
+      try {
+        await audio.play();
+      } catch (error) {
+        console.warn("Autoplay was blocked:", error);
+      }
+    };
 
     if (isPlaying) {
-      audio.play().catch(() => {});
+      setTimeout(playAudio, 300);
     }
 
     return () => {
       audio.pause();
     };
-  }, []); // Run only once on mount
+  }, []); // Runs once on mount
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -65,6 +75,7 @@ export default function MusicPlayer() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <h2>{isPlaying ? "Now Playing... 🎶" : "Click Play! 🐇"}</h2>
       <div className="scrolling-title">
         <p>
           Laufey - Valentine (Official Audio) ❤️ Happy Valentine’s Day! ❤️ To
