@@ -62,9 +62,7 @@ export default function MusicPlayer() {
       <h2>{isPlaying ? "Now Playing... 🎶" : "Click Play! 🐇"}</h2>
       <div className="scrolling-title">
         <p>
-          Laufey - Valentine (Official Audio) ❤️ Happy Valentine’s Day! ❤️ To
-          those celebrating with a special someone, may your day be filled with
-          love, laughter, and cherished moments. Love is a beautiful thing, and
+          Laufey - Valentine (Official Audio) ❤️ Love is a beautiful thing, and
           today is a reminder to appreciate the connections that bring warmth to
           our hearts. For those spending the day alone, remember that love isn’t
           just about romance—it’s in the friendships you cherish, the family who
